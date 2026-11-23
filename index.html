@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VICE CITY CLOTHING</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080812;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background: #10101d;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff37a8;
+}
+
+.logo {
+    font-family: 'Oswald';
+    font-size: 28px;
+    color: #ff37a8;
+    letter-spacing: 3px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff37a8;
+}
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background:
+    linear-gradient(90deg, rgba(8,8,18,.95), rgba(8,8,18,.2)),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1600');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-family: 'Oswald';
+    font-size: clamp(55px, 9vw, 95px);
+    line-height: 1;
+    color: #ff37a8;
+    text-shadow: 4px 4px #00d9ff;
+}
+
+.hero p {
+    margin: 25px 0;
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff37a8;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #00d9ff;
+    color: #080812;
+    transform: scale(1.05);
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    font-family: 'Oswald';
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 45px;
+    color: #ff37a8;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    background: #151522;
+    border: 1px solid #29293b;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    border-color: #ff37a8;
+    box-shadow: 0 0 20px #ff37a844;
+}
+
+.product img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #00d9ff;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.product button {
+    width: 100%;
+}
+
+.cart {
+    background: #151522;
+    border: 1px solid #ff37a8;
+    padding: 25px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.cart h3 {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    color: #ddd;
+}
+
+footer {
+    text-align: center;
+    background: #10101d;
+    padding: 35px;
+    color: #999;
+    border-top: 2px solid #ff37a8;
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VICE CITY®</div>
+    <nav>
+        <a href="#inicio">INÍCIO</a>
+        <a href="#loja">LOJA</a>
+        <a href="#carrinho">CARRINHO 🛒</a>
+    </nav>
+</header>
+
+<div class="hero" id="inicio">
+    <div class="hero-content">
+        <h1>WELCOME TO<br>VICE CITY</h1>
+        <p>
+            ESTILO, ATITUDE E LIBERDADE.
+            Vista o estilo das ruas de Vice City.
+            Descubra nossa nova coleção.
+        </p>
+        <a href="#loja" class="btn">EXPLORAR COLEÇÃO</a>
+    </div>
+</div>
+
+<section id="loja">
+    <h2 class="section-title">NOVA COLEÇÃO</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Camiseta branca">
+            <div class="product-info">
+                <h3>VICE CITY T-SHIRT</h3>
+                <div class="price">R$ 89,90</div>
+                <button class="btn" onclick="addCart('VICE CITY T-SHIRT', 89.90)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600" alt="Moletom">
+            <div class="product-info">
+                <h3>MIAMI HOODIE</h3>
+                <div class="price">R$ 179,90</div>
+                <button class="btn" onclick="addCart('MIAMI HOODIE', 179.90)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=600" alt="Boné">
+            <div class="product-info">
+                <h3>VICE CAP</h3>
+                <div class="price">R$ 69,90</div>
+                <button class="btn" onclick="addCart('VICE CAP', 69.90)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600" alt="Calça jeans">
+            <div class="product-info">
+                <h3>STREET JEANS</h3>
+                <div class="price">R$ 149,90</div>
+                <button class="btn" onclick="addCart('STREET JEANS', 149.90)">ADICIONAR</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="carrinho">
+    <h2 class="section-title">SEU CARRINHO</h2>
+
+    <div class="cart">
+        <h3>🛒 Seus produtos</h3>
+        <div id="items">Seu carrinho está vazio.</div>
+        <hr style="border-color:#333; margin:20px 0;">
+        <h3 id="total">Total: R$ 0,00</h3>
+        <br>
+        <button class="btn" onclick="checkout()">FINALIZAR PEDIDO</button>
+    </div>
+</section>
+
+<footer>
+    <h2 class="logo">VICE CITY®</h2>
+    <p>© 2026 VICE CITY CLOTHING - TODOS OS DIREITOS RESERVADOS.</p>
+    <p style="margin-top:10px">ESTILO SEM LIMITES.</p>
+</footer>
+
+<script>
+let cart = [];
+
+function addCart(name, price) {
+    cart.push({name, price});
+    updateCart();
+    alert(name + " adicionado ao carrinho!");
+}
+
+function removeCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    const items = document.getElementById('items');
+    const total = document.getElementById('total');
+
+    if (cart.length === 0) {
+        items.innerHTML = 'Seu carrinho está vazio.';
+    } else {
+        items.innerHTML = cart.map((item, index) => `
+            <div class="cart-item">
+                <span>${item.name}</span>
+                <span>
+                    R$ ${item.price.toFixed(2).replace('.', ',')}
+                    <button onclick="removeCart(${index})"
+                    style="background:none;color:#ff37a8;border:0;cursor:pointer;margin-left:8px">✕</button>
+                </span>
+            </div>
+        `).join('');
+    }
+
+    let sum = cart.reduce((acc, item) => acc + item.price, 0);
+    total.innerText = 'Total: R$ ' + sum.toFixed(2).replace('.', ',');
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+    }
+
+    alert('Pedido criado! Configure um sistema de pagamento para receber pedidos reais.');
+}
+</script>
+
+</body>
+</html>
